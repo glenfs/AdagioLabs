@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head >
+    <!--To use Google Fonts, you typically include a link to the font in your HTML <head> section,
+    and then specify the font family in your CSS. -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adagio Wave Labs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header >
+        <div class="container">
+            <div class="header-content">
+            <!-- Logo image -->
+            <img src="{{url_for('static', filename='logo.png')}}" alt="Your Company Logo" class="logo">
+            <!-- Heading -->
+            <h1>Adagio Wave Labs</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Downloads</a></li>
+                    <li><a href="#">Purchase</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </header>
+
+    <main >
+        <div class="container" >
+            <h2>Our Products</h2>
+            <div class="products" >
+                {% for product in products %}
+                <div class="product" >
+                    <h3>{{ product['title'] }}</h3>
+                    <p>{{ product['description'] }}</p>
+                    <div class="buttons" >
+                        <button>Read More</button>
+                        <button>Download</button>
+                        <button>Buy Now</button>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Adagio Wave Labs. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materialize CSS Buttons</title>
+    <!-- Import Google Icon Font -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Import Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+     <style>
+        /* Define gradient button class */
+        .gradient-button {
+            background: linear-gradient(to right, #ffffff, #ff0033);
+            color: #fff;
+        }
+    </style>
+
+</head>
+<body>
+<div class="white">
+    <button class="waves-effect waves-light btn blue gradient-button" >Primary Button</button>
+    <button class="waves-effect waves-light btn secondary-color">Secondary Button</button>
+    <button class="waves-effect waves-light btn btn-outline">Outlined Button</button>
+    <a class="waves-effect waves-light btn-floating btn-large red"><i class="material-icons">add</i></a>
+    <button class="btn blue">Blue Button</button>
+    <button class="btn red lighten-2">Red Button</button>
+    <button class="btn green darken-3">Green Button</button>
+    <!-- Icon Button -->
+    <a class="btn waves-effect waves-light">
+        <i class="material-icons left">cloud</i>Icon Button
+    </a>
+</div>
+    <!-- Import jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Import Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Initialize Materialize components -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Materialize components
+            M.AutoInit();
+        });
+    </script>
+</body>
+</html>
