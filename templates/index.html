@@ -9,13 +9,37 @@
     <title>Adagio Wave Labs</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    // Get all the product containers
+    const products = document.querySelectorAll('.product');
+
+    // Loop through each product
+    products.forEach(product => {
+        // Get the buttons and additional info
+        const readMoreBtn = product.querySelector('.read-more');
+        const downloadBtn = product.querySelector('.download');
+        const additionalInfo = product.querySelector('.additional-info');
+
+        // Toggle visibility of additional info when "Read More" is clicked
+        readMoreBtn.addEventListener('click', function() {
+            additionalInfo.classList.toggle('show');
+        });
+
+        // Toggle visibility of files when "Download" is clicked
+        downloadBtn.addEventListener('click', function() {
+            additionalInfo.classList.toggle('show');
+        });
+    });
+});
+    </script>
 </head>
 <body>
     <header >
         <div class="container">
             <div class="header-content">
             <!-- Logo image -->
-            <img src="{{url_for('static', filename='logo.png')}}" alt="Your Company Logo" class="logo">
+            <img src="{{url_for('static', filename='logo-bg-trans.png')}}" alt="Adadio Wave Labs" class="logo">
             <!-- Heading -->
             <h1>Adagio Wave Labs</h1>
             </div>
@@ -37,13 +61,28 @@
             <h2>Our Products</h2>
             <div class="products" >
                 {% for product in products %}
-                <div class="product" >
-                    <h3>{{ product['title'] }}</h3>
-                    <p>{{ product['description'] }}</p>
-                    <div class="buttons" >
-                        <button>Read More</button>
-                        <button>Download</button>
-                        <button>Buy Now</button>
+                <div class="product">
+                    <div class="product_header">
+                        <img src='{{ product["image"]}}' width="50" height="50">
+                        <h3>{{ product['title'] }}</h3>
+                    </div>
+                    <p align="justify">{{ product['description'] }}</p>
+                    <div class="buttons">
+                        <button class="read-more">Read More</button>
+                        <button class="download">Download</button>
+                        <div class="additional-info">
+                            <!-- Files for download -->
+                           <div class="download-section">
+                            <div class="download-option">
+                                <img src="static/windows.png" alt="Windows" width="50" height="50">
+                                <a href="#">Download for Windows</a>
+                            </div>
+                            <div class="download-option">
+                                <img src="static/apple.png" alt="Mac" width="50" height="50">
+                                <a href="#">Download for Mac</a>
+                            </div>
+                        </div>
+                        </div>
                     </div>
                 </div>
                 {% endfor %}
