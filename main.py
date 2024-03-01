@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, send_from_directory
 
 app = Flask(__name__)
 
@@ -19,6 +19,13 @@ def home():
 def test():
     return render_template('test.html')
 
+@app.route('/downloadFileWin')
+def download_file_Win():
+    return send_from_directory('data', "sightreader.zip", as_attachment=True)
+
+@app.route('/downloadFileMac')
+def download_file_Mac():
+    return send_from_directory('data', "SightReader.dmg", as_attachment=True)
 
 if __name__ == '__main__':
     app.run(debug=True)
