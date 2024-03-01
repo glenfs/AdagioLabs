@@ -14,11 +14,6 @@ def home():
     ]
     return render_template('index.html', products=products)
 
-
-@app.route('/test')
-def test():
-    return render_template('test.html')
-
 @app.route('/downloadFileWin')
 def download_file_Win():
     return send_from_directory('data', "sightreader.zip", as_attachment=True)
