@@ -28,4 +28,4 @@ def download_file_Mac():
     return send_from_directory('data', "SightReader.dmg", as_attachment=True)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
